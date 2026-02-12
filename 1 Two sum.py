@@ -5,7 +5,6 @@ def twoSum(nums, target):
             if (nums[i]+ nums[j])==target:
                 return "Found:",i,j
 
-      
         
 result = twoSum([1,2,3,4],4)
 print(result)
