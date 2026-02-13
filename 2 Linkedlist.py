@@ -10,17 +10,36 @@ class Solution(object):
         carry = 0
         dummy = ListNode(0)
         current = dummy
+        print("Current",current)
+
+        print("L1 node",l1)
+        print("L2 node",l2)
+        print("Carry node",carry)
 
         while l1 or l2 or carry:
             x = l1.val if l1 else 0
+            print("l1.value",x)
             y = l2.val if l2 else 0
+            print("l2.value",y)
+
+            print("carry",carry)
 
             total = x + y + carry
-            carry = total // 10
-            digit = total % 10
 
+            print("Total",total)
+
+            carry = total // 10
+            print("Carry",carry)
+
+            digit = total % 10
+            print("Digit",digit)
+            print("Current",current)
+            
             current.next = ListNode(digit)
+
+
             current = current.next
+            print("Current -next ",current)
 
             if l1:
                 l1 = l1.next
@@ -51,8 +70,8 @@ def print_list(node):
 
 
 # ---------- Test ----------
-l1 = build_list([1, 2, 3])
-l2 = build_list([4, 5, 6])
+l1 = build_list([6, 7, 8])
+l2 = build_list([5, 6, 7])
 
 sol = Solution()
 result = sol.addTwoNumbers(l1, l2)
